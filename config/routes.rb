@@ -1,17 +1,21 @@
 Piragoff::Application.routes.draw do
-  get "main/index"
+  root :to => 'main#index'
+  
+  match "/" => "main#index"
+  
+  match "/index" => "main#index"
 
-  get "main/life"
+  match "/life" => "main#life"
 
-  get "main/history"
+  match "/history" => "main#history"
 
-  get "main/plans"
+  match "/plans" => "main#plans"
 
-  get "main/travels"
+  match "/travels" => "main#travels"
 
-  get "main/help"
+  match "/help" => "main#help"
 
-  get "main/about"
+  match "/about" => "main#about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="header">
+    <a href="/index">
+    <div id="logo" class="navbutton">
+      Piragoff & C<sup>o</sup>
+    </div>
+    </a>
+    <div class="navlist">
+      Жизнь
+    </div>
+  </div>
+  <div id="wrapper">
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
