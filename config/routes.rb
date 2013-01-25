@@ -1,4 +1,18 @@
 Piragoff::Application.routes.draw do
+  get "main/index"
+
+  get "main/life"
+
+  get "main/history"
+
+  get "main/plans"
+
+  get "main/travels"
+
+  get "main/help"
+
+  get "main/about"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
