@@ -1,4 +1,7 @@
 Piragoff::Application.routes.draw do
+  resources :users
+
+
   root :to => 'main#index'
   
   match "/" => "main#index"
