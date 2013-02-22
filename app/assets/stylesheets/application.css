@@ -1,3 +1,14 @@
+#content {
+  margin: 40px;
+}
+.navbar {
+  width: 940px;
+  margin: 0px auto;
+}
+#pass {
+  float: right;
+}
+
 /*!
  * Bootstrap v2.2.2
  *

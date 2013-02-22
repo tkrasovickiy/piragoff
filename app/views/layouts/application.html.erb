@@ -1,16 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Piragoff</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div>
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="/index">Piragoff & C<sup>o</sup></a>
+      <ul class="nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Жизнь
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/index">News</a></li>
+            <li><a href="/travels">Travels</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Дополнительно</a></li>
+        <li id="pass"><a href="/arrival">Вход</a></li>
+      </ul>
+      <div id="user_nav" style="float:right; padding:7px; color:white;">
+        <% if current_user %>
+          Logged in as <%= current_user.email %>.
+          <%= link_to "Log out", log_out_path %>
+        <% else %>
+          <%= link_to "Sign up", sign_up_path %> or
+          <%= link_to "log in", log_in_path %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div>
-   <%= yield %>
+  <div class="container">
+    
+    <div id="content">
+    
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    
+      <%= yield %>
+    </div>
   </div>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/bootstrap.js"></script>
 </body>
 </html>

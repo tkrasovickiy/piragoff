@@ -19,4 +19,7 @@ class MainController < ApplicationController
 
   def about
   end
+  
+  def arrival
+  end
 end
